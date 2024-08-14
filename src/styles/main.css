@@ -1,0 +1,329 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../font/Montserrat-Regular.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../font/Montserrat-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../../font/Montserrat-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  color: #1C2A39;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw 10vw;
+}
+header h1 {
+  font-weight: 700;
+  font-size: 3vw;
+}
+header .nav-pages {
+  margin: 1rem 0;
+}
+header .nav-pages .nav-button {
+  display: none;
+}
+header .nav-pages ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+header .nav-pages ul li {
+  margin: 0 1rem;
+}
+header .nav-pages ul li a {
+  color: #5C6A79;
+  text-decoration: none;
+  font-size: 1.2vw;
+  font-weight: 600;
+  font-variant: small-caps;
+}
+header .nav-pages ul li a:hover {
+  text-decoration: underline;
+}
+header .nav-pages ul li.current-page a {
+  color: #1C2A39;
+  font-weight: 700;
+}
+@media (max-width: 768px) {
+  header .nav-pages {
+    position: relative;
+  }
+  header .nav-pages .nav-button {
+    display: block;
+    color: inherit;
+    background-color: inherit;
+    font-family: "Montserrat", sans-serif;
+    border-width: 0;
+    font-variant: small-caps;
+    font-size: 2.5vw;
+  }
+  header .nav-pages .nav-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 2;
+    border: 1px solid #dadada;
+    background-color: #f1f1f1;
+    width: max-content;
+  }
+  header .nav-pages .nav-list li {
+    margin: 0;
+    text-align: left;
+    line-height: normal;
+    padding: 0 4px;
+  }
+  header .nav-pages .nav-list li:hover {
+    background-color: #787878;
+  }
+  header .nav-pages .nav-list.hide {
+    display: none;
+  }
+}
+header .user-tools {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .user-tools a {
+  margin: 0 0.2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header .user-tools a img {
+  height: 2vw;
+  width: auto;
+}
+header .user-tools .cart-div {
+  position: relative;
+}
+header .user-tools .cart-div #cart {
+  position: absolute;
+  background-color: #FF353A;
+  color: #ffffff;
+  text-decoration: none;
+  right: -50%;
+  bottom: -50%;
+  border-radius: 50%;
+  width: 2vw;
+  height: 2vw;
+  font-size: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  position: relative;
+  width: 100vw;
+  overflow: hidden;
+  padding: 2vw 10vw;
+}
+.slider .slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slider .slides .slide {
+  width: 100%;
+  aspect-ratio: 16/10;
+  box-sizing: border-box;
+}
+.slider .slides .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.slider .slider-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.slider .slider-buttons .slider-button {
+  border: none;
+  border-radius: 50%;
+  height: 12px;
+  width: 12px;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  outline: none;
+  background-color: #EFEEF6;
+}
+.slider .slider-buttons .slider-button.active {
+  background-color: #9E98DC;
+}
+.slider .slider-promotions .slider-promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 2vw 2vw 1vw 2vw;
+  position: absolute;
+}
+.slider .slider-promotions .slider-promo a {
+  font-size: 1.1vw;
+  text-decoration: none;
+  font-weight: 700;
+  font-variant: small-caps;
+  color: #1C2A39;
+}
+.slider .slider-promotions .slider-promo a .arrow {
+  width: 60%;
+}
+.slider .slider-promotions .promo-one {
+  background-color: #9E98DC;
+  max-width: 10vw;
+  aspect-ratio: 2/3;
+  right: 5%;
+  top: 10%;
+}
+.slider .slider-promotions .promo-two {
+  background-color: #FF8FE6;
+  max-width: 8vw;
+  aspect-ratio: 1/2;
+  right: 1%;
+  top: 50%;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  padding-right: 10vw;
+}
+.container .categories {
+  background-color: #EFEEF6;
+  color: #5C6A79;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 1.5vw;
+  width: 20vw;
+  height: max-content;
+  display: flex;
+  justify-content: center;
+  padding: 3vw 0 8vw;
+}
+.container .categories ul {
+  list-style-type: none;
+}
+.container .categories ul .category-item {
+  margin-top: 15px;
+  cursor: pointer;
+}
+.container .categories ul .category-item.active {
+  font-weight: 700;
+  color: #1C2A39;
+  font-size: 1.7vw;
+  position: relative;
+}
+.container .categories ul .category-item.active:before {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: black;
+  border-radius: 50%;
+}
+.container .books-main {
+  width: 72vw;
+  margin-top: 5vw;
+}
+.container .books-main .book-list .books-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4vw;
+  margin-left: -2vw;
+}
+.container .books-main .book-list .books-container .book-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6%;
+  border: 1px solid #EEEDF5;
+}
+.container .books-main .book-list .books-container .book-card .book-photo-div {
+  width: 46%;
+  aspect-ratio: 7/10;
+  box-shadow: 0px 24px 36px 0px rgba(53, 49, 84, 0.2784313725);
+}
+.container .books-main .book-list .books-container .book-card .book-photo-div .book-photo {
+  width: 100%;
+  object-fit: cover;
+}
+.container .books-main .book-list .books-container .book-card .book-info-div {
+  width: 47%;
+  font-family: "Open Sans";
+  font-size: 1vw;
+  color: #5C6A79;
+}
+.container .books-main .book-list .books-container .book-card .book-info-div .title, .container .books-main .book-list .books-container .book-card .book-info-div .price {
+  font-family: "Montserrat", sans-serif;
+  color: #1C2A39;
+  font-size: 1.2vw;
+  font-weight: 700;
+  margin: 0.5vw 0;
+}
+.container .books-main .book-list .books-container .book-card .book-info-div .average-rating {
+  max-width: 30%;
+}
+.container .books-main .book-list .books-container .book-card .book-info-div .description {
+  margin: 1.3vw 0;
+}
+.container .books-main .book-list .books-container .book-card .book-info-div .button-buy {
+  width: 100%;
+  border: 1px solid #4C3DB2;
+  text-align: center;
+  background-color: #ffffff;
+  color: #4C3DB2;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2vw;
+  padding: 1.2vw 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+  .container .books-main .book-list .books-container {
+    grid-template-columns: auto;
+    margin-left: 2vw;
+    max-width: 300px;
+  }
+}
+.container .books-main button {
+  border: 1px solid #4C3DB2;
+  text-align: center;
+  background-color: #ffffff;
+  color: #4C3DB2;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.2vw;
+  padding: 1.2vw 2.4vw;
+  font-weight: 600;
+  margin: 3vw auto;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=main.css.map */
