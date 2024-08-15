@@ -150,9 +150,11 @@ const toggleCartItem = (id, button) => {
 };
 
 const displayCartItem = () => {
-    const inCart = JSON.parse(localStorage.getItem('cart')).length;
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const inCart = cart.length;
     document.getElementById('cart').innerHTML = inCart;
 }
+
 
 
 
